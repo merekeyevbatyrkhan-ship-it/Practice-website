@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101116">
+    <meta name="description" content="Учебная площадка по веб-разработке с гайдами по Vercel и Supabase, лабораторией HTTP и SQL и подборкой инструментов.">
+    <title>DevПрактика — веб-разработка на практике</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-skip>К содержимому</a>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Боковая панель">
+        <div class="sidebar-top">
+          <a class="brand" href="#home" aria-label="DevПрактика, обзор">
+            <span class="brand-mark" data-icon="terminal"></span>
+            <span class="brand-name">Dev<span>Практика</span><small>Учебная площадка</small></span>
+          </a>
+          <button type="button" class="icon-button close-sidebar" data-close-menu aria-label="Закрыть меню" data-icon="x"></button>
+        </div>
+        <nav class="navigation" aria-label="Основная навигация">
+          <div class="nav-group">
+            <span class="nav-label">ПЛОЩАДКА</span>
+            <a class="nav-link" href="#home" data-nav="home"><span data-icon="grid"></span>Обзор</a>
+          </div>
+          <div class="nav-group">
+            <span class="nav-label">ОБУЧЕНИЕ</span>
+            <a class="nav-link" href="#vercel" data-nav="vercel"><span data-icon="vercel"></span>Vercel</a>
+            <a class="nav-link" href="#supabase" data-nav="supabase"><span data-icon="supabase"></span>Supabase</a>
+            <a class="nav-link" href="#practice" data-nav="practice"><span data-icon="book"></span>Практика</a>
+          </div>
+          <div class="nav-group">
+            <span class="nav-label">ИНСТРУМЕНТЫ</span>
+            <a class="nav-link" href="#lab/api" data-nav="lab"><span data-icon="flask"></span>Лаборатория</a>
+            <a class="nav-link" href="#resources" data-nav="resources"><span data-icon="layers"></span>Ресурсы</a>
+          </div>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="side-progress">
+            <div class="side-progress-label"><span data-icon="chart"></span><strong>Твой прогресс</strong></div>
+            <div id="side-progress"></div>
+          </div>
+          <div class="sidebar-note"><span data-icon="hard-drive"></span> Сохраняется в браузере</div>
+        </div>
+      </aside>
+      <div class="workspace">
+        <header class="topbar">
+          <div class="topbar-inner">
+            <button type="button" class="icon-button menu-toggle" data-menu aria-label="Открыть меню" aria-controls="sidebar" aria-expanded="false" data-icon="menu"></button>
+            <p class="breadcrumb"><span class="breadcrumb-root">Площадка</span><span data-icon="chevron-right"></span><span id="breadcrumb-current">Обзор</span></p>
+            <button type="button" class="search-trigger" data-search aria-label="Поиск по сайту"><span data-icon="search"></span><span class="search-label">Поиск по сайту</span><kbd>Ctrl K</kbd></button>
+          </div>
+        </header>
+        <main class="content" id="main" tabindex="-1"></main>
+        <footer class="footer"><span>DevПрактика</span><span>HTML · CSS · JavaScript · Node.js</span></footer>
+      </div>
+    </div>
+    <div class="menu-overlay" data-close-menu hidden></div>
+    <dialog class="search-dialog" aria-labelledby="search-title">
+      <div class="search-dialog-top">
+        <span data-icon="search"></span>
+        <label id="search-title" class="sr-only" for="search-input">Поиск по урокам и инструментам</label>
+        <input type="search" id="search-input" placeholder="Найти урок или инструмент…" autocomplete="off">
+        <button type="button" class="icon-button" data-close-search aria-label="Закрыть поиск" data-icon="x"></button>
+      </div>
+      <p class="sr-only" id="search-count" role="status"></p>
+      <div id="search-results" class="search-results"></div>
+    </dialog>
+    <div class="toast" id="toast" role="status"></div>
+    <noscript>Для работы уроков и лаборатории включи JavaScript.</noscript>
+  </body>
+</html>
